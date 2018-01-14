@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		
+	  	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+
+   		<link rel="stylesheet" href="css/main.css">
+		<!-- REVOLUTION BANNER CSS SETTINGS -->
+		<link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" />
+
+    	<title>Title</title>
+
+	    <!--[if lt IE 9]>
+	      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+
+  </head>
+<body>
+
+	<div id="page">
+
+	<noscript><p>Ваш браузер не поддерживает скрипты!<br/> Пожалуйста подключите в настройках браузера Javascript</p></noscript> 
+
+
+
+	<!-- HEADER -->
+	<div class="header-hidden"></div>
+	<header id="header" class="header-scroll">
+		<!-- HEADER TOP -->
+		<div class="skin-header-top hidden-sm hidden-xs">
+			<div class="container">
+				<div class="header-top-content">
+
+					<div class="logo pie-xs-3">
+						<div class="img-content pie-xs-5">
+							<img src="img/logo.png">
+						</div>
+						<div class="desc-content pie-xs-7 p-h-15">
+							<font class="font-family-2 text-uppercase">Стандарт <br/>защита</font>
+						</div>
+					</div>
+
+					<div class="info-phone pie-xs-5">
+						<dib class="fa fa-phone vam color-3"></dib>
+						<dib class="vam p-h-10">
+							<strong>+998 (91) 230 33 88</strong>
+							<p class="color-gray">Пн-Пт: с 9:00 до 18:00</p>
+						</dib>
+					</div>
+
+					<div class="info-mail pie-xs-2">
+						<i class="fa fa-envelope color-3 vam"></i>
+						<dib class="vam p-h-10">Sale@tksiz.ru</dib>
+					</div>
+
+					<div class="header-search pie-xs-5">
+						<form method="POST" action="">
+	  					<div class="header-search-content">
+	  						<input class="pie-form-control" name="query" value="" placeholder="Название товара">
+	  						<button type="submit" class="btn-res btn-search"><img src="img/icons/search.png" /></button>
+	        		</div>
+      			</form>
+					</div>
+
+				</div>
+			</div><!-- ./CONTAINER -->
+		</div><!-- ./HEADER TOP -->
+
+
+
+    	<!-- HEADER BOTTOM -->
+		<div class="skin-header-bottom hidden-sm hidden-xs">
+			<div class="container">
+				<div class="header-bottom-content">
+
+					<div class="menu pie-xs-12">
+						<ul>
+							<li><a href="about.html">О компании</a></li>
+							<li><a href="news.html">Новости</a></li>
+							<li><a href="production.html">Продукция <i class="fa fa-angle-down"></i></a>
+								<ul class="sub-menu-1">
+									<li><a href="production-article.html">Противогазы гражданские</a>
+									<li><a href="production-article.html">Шланговые дыхательные аппараты</a>
+									<li><a href="production-article.html">Комплектующие противогазов</a>
+									<li><a href="production-article.html">Полумаски со сменными фильтрами</a>
+									<li><a href="production-article.html">Противогазы промышленные</a>
+									<li><a href="production-article.html">Фильтры противогазовые и комбинированные</a>
+									<li><a href="production-article.html">Полумаски противоаэрозольные</a>
+									<li><a href="production-article.html">Самоспасатели</a>
+									<li><a href="production-article.html">Средства индивидуальной защиты головы и лица человека</a>
+									<li><a href="production-article.html">Средства индивидуальной защиты от падения с высоты</a>
+									<li><a href="production-article.html">Измерительные приборы</a>
+								</ul>
+							</li>
+							<li><a href="info.html">Информация</a></li>
+							<li><a href="catalog.html">Каталог</a></li>
+							<li><a href="contacts.html">Контакты</a></li>
+						</ul>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+		
+	</header>
+
+
+
+
+
+	<!-- BID MODAL-->
+	<div class="bid-modal modal fade animated" id="modal-bid" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+
+	    	<button type="button" class="btn" data-dismiss="modal">
+	    		<span class="icon-bar"></span>
+	    		<span class="icon-bar"></span>
+	    	</button>
+
+	      <div class="modal-body">
+
+
+					<div class="col-md-12 success-info hide">
+						<div id="success-message"></div>
+						<div id="fail-message"></div>
+					</div>
+
+					<h3>Связаться с нами</h3>
+					<form id="modal-bid-form" method="post" action="" class="contact-form">
+
+
+
+						<!-- NAME -->
+						<span class="input input--nariko input-name">
+							<input class="input__field input__field--nariko" 
+										 type="text" 
+										 id="input-1" 
+										 name="name"
+										 minlength="2"
+										 autocomplete="off" 
+										 required="required"/>
+
+							<label class="input__label input__label--nariko" for="input-1">
+								<span class="input__label-content input__label-content--nariko">Имя</span>
+							</label>
+						</span>
+						<!-- EMAIL -->
+						<span class="input input--nariko input-email">
+
+							<input class="input__field input__field--nariko" 
+										 type="email" 
+										 id="input-2" 
+										 name="email"
+										 autocomplete="off" 
+										 required="required"/>
+
+							<label class="input__label input__label--nariko" for="input-2">
+								<span class="input__label-content input__label-content--nariko">Электронная почта</span>
+							</label>
+
+						</span>
+						<!-- TEL -->
+						<span class="input input--nariko input-phone">
+
+							<input class="input__field input__field--nariko" 
+										 type="tel" 
+										 id="input-3" 
+										 name="tel"
+										 autocomplete="off" 
+										 required="required"/>
+
+							<label class="input__label input__label--nariko" for="input-3">
+								<span class="input__label-content input__label-content--nariko">Номер телефона</span>
+							</label>
+
+						</span>
+						<!-- MESSAGE -->
+						<span class="textarea">
+							<label class="" for="textarea-4">
+								<span class="">Сообщение</span>
+							</label>
+							<textarea class="" 
+										 style="resize: none;"
+										 id="textarea-4"
+										 type="text" 
+										 name="message"
+										 autocomplete="off" 
+										 required="required"></textarea>
+						</span>
+
+						<div class="form-footer">
+			      	<button type="submit" class="align-right btn-def submit">
+			      		<b>Отправить</b>
+			      	</button>
+			      </div>
+
+
+					</form>
+
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<main class="container-fluid">
+
+
+
+
+		<!-- REV SLIDER -->
+		<div class="index-slider row">
+			<div class="fullscreen-container">
+				<div class="rev-slider">
+
+					<ul>
+
+						<li class="slide-1" data-transition="fade" data-masterspeed="2000">
+							<img src="img/slider/slide-1.jpg">
+							<div class="container">
+								<div class="caption slide-header" 	
+									data-y="top"
+									data-x="left"
+									data-voffset="100"
+									data-hoffset="0"
+									data-speed="1300"
+									data-start="800"
+									data-ease="easeInBack">
+
+									<h2 class="color-white">
+										Современные фильтры, обеспечивающие качественную
+										<span class="color-4">Очистку воздуха</span>
+									</h2>
+									
+								</div>
+							</div>
+						</li>
+
+					</ul>
+
+				</div>
+			</div>
+		</div> <!-- ./END SLIDER -->
+
+
+
+
+	
+		<div class="main-content list-style-1 bg-mountain">
+
+		
+			<div class="row short-production">
+				<div class="container">
+
+					<div class="clearfix row p-v-60">
+						<h1>Продукция</h1>
+
+						<div class="short-production-content figure-m-v-15 center">
+
+							<figure class="col-xs-12 col-sm-6 col-md-4 p-h-15">
+								<div class="cell-content">
+									<a href="production-article.html" class="pie-flex-content">
+										<div class="cell-hover"></div>
+										<div class="desc-content pie-xs-flex-5">
+											<p>Противогазы гражданские</p>
+										</div>
+										<div class="img-content pie-xs-flex-5 ">
+											<img src="img/production/1.jpg" />
+										</div>
+									</a>
+								</div>
+							</figure>
+
+							<figure class="col-xs-12 col-sm-6 col-md-4 p-h-15">
+								<div class="cell-content">
+									<a href="production-article.html" class="pie-flex-content">
+										<div class="cell-hover"></div>
+										<div class="desc-content pie-xs-flex-5">
+											<p>Шланговые дыхательные аппараты</p>
+										</div>
+										<div class="img-content pie-xs-flex-5 ">
+											<img src="img/production/2.jpg" />
+										</div>
+									</a>
+								</div>
+							</figure>
+
+							<figure class="col-xs-12 col-sm-6 col-md-4 p-h-15">
+								<div class="cell-content">
+									<a href="production-article.html" class="pie-flex-content">
+										<div class="cell-hover"></div>
+										<div class="desc-content pie-xs-flex-5">
+											<p>Комплектующие противогазов</p>
+										</div>
+										<div class="img-content pie-xs-flex-5 ">
+											<img src="img/production/3.jpg" />
+										</div>
+									</a>
+								</div>
+							</figure>
+							
+							<figure class="col-xs-12 col-sm-6 col-md-4 p-h-15">
+								<div class="cell-content">
+									<a href="production-article.html" class="pie-flex-content">
+										<div class="cell-hover"></div>
+										<div class="desc-content pie-xs-flex-5">
+											<p>Полумаски со сменными фильтрами</p>
+										</div>
+										<div class="img-content pie-xs-flex-5 ">
+											<img src="img/production/4.jpg" />
+										</div>
+									</a>
+								</div>
+							</figure>
+
+							<figure class="col-xs-12 col-sm-6 col-md-4 p-h-15">
+								<div class="cell-content">
+									<a href="production-article.html" class="pie-flex-content">
+										<div class="cell-hover"></div>
+										<div class="desc-content pie-xs-flex-5">
+											<p>Противогазы промышленные</p>
+										</div>
+										<div class="img-content pie-xs-flex-5 ">
+											<img src="img/production/5.jpg" />
+										</div>
+									</a>
+								</div>
+							</figure>
+
+							<figure class="col-xs-12 col-sm-6 col-md-4 p-h-15">
+								<div class="cell-content">
+									<a href="production-article.html" class="pie-flex-content">
+										<div class="cell-hover"></div>
+										<div class="desc-content pie-xs-flex-5">
+											<p>Лицевые части к противогазам</p>
+										</div>
+										<div class="img-content pie-xs-flex-5 ">
+											<img src="img/production/6.jpg" />
+										</div>
+									</a>
+								</div>
+							</figure>
+						
+							<figure class="col-xs-12 col-sm-6 col-md-4 p-h-15">
+								<div class="cell-content">
+									<a href="production-article.html" class="pie-flex-content">
+										<div class="cell-hover"></div>
+										<div class="desc-content pie-xs-flex-5">
+											<p>Фильтры противогазовые и комбинированные</p>
+										</div>
+										<div class="img-content pie-xs-flex-5 ">
+											<img src="img/production/7.jpg" />
+										</div>
+									</a>
+								</div>
+							</figure>
+						
+							<figure class="col-xs-12 col-sm-6 col-md-4 p-h-15">
+								<div class="cell-content">
+									<a href="production-article.html" class="pie-flex-content">
+										<div class="cell-hover"></div>
+										<div class="desc-content pie-xs-flex-5">
+											<p>Полумаски противоаэрозольные</p>
+										</div>
+										<div class="img-content pie-xs-flex-5 ">
+											<img src="img/production/8.jpg" />
+										</div>
+									</a>
+								</div>
+							</figure>
+
+							<figure class="col-xs-12 col-sm-6 col-md-4 p-h-15">
+								<div class="cell-content">
+									<a href="production-article.html" class="pie-flex-content">
+										<div class="cell-hover"></div>
+										<div class="desc-content pie-xs-flex-5">
+											<p>Средства индивидуальной защиты от падения с высоты</p>
+										</div>
+										<div class="img-content pie-xs-flex-5 ">
+											<img src="img/production/9.jpg" />
+										</div>
+									</a>
+								</div>
+							</figure>
+
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+			<div class="row short-novelties bg-novelties">
+				<div class="container">
+					<div class="clearfix row p-v-60">
+
+						<div class="short-novelties-content figure-m-v-15">
+
+								<figure class="col-xs-12 col-md-4 p-h-15">
+									<div class="cell-content">
+										<a href="production-article.html" class="pie-flex-content">
+											<div class="screen-content"></div>
+											<div class="img-content">
+												<img src="img/novelties/1.jpg" />
+											</div>
+											<div class="desc-content">
+												<p>Новинка! Маски медицинские</p>
+											</div>
+										</a>
+									</div>
+								</figure>
+								
+								<figure class="col-xs-12  col-md-4 p-h-15">
+									<div class="cell-content">
+										<a href="production-article.html" class="pie-flex-content">
+											<div class="screen-content"></div>
+											<div class="img-content">
+												<img src="img/novelties/2.jpg" />
+											</div>
+											<div class="desc-content">
+												<p>Уже в продаже! Маска Бриз-3204 «УРГА»</p>
+											</div>
+										</a>
+									</div>
+								</figure>
+								
+								<figure class="col-xs-12 col-md-4 p-h-15">
+									<div class="cell-content">
+										<a href="production-article.html" class="pie-flex-content">
+											<div class="screen-content"></div>
+											<div class="img-content">
+												<img src="img/novelties/3.jpg" />
+											</div>
+											<div class="desc-content">
+												<p>Спортивная новинка! Дыхательный тренажер Эльбрус</p>
+											</div>
+										</a>
+									</div>
+								</figure>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+
+
+
+			<div class="row short-popular">
+				<div class="container">
+
+					<div class="clearfix row p-v-60">
+						<h1>Популярные товары</h1>
+						<div class="short-popular-content">
+							<div class="carousel-popular col-xs-12">
+
+								<div class="carousel-content">
+
+									<figure class="carousel-cell p-h-25 p-v-30 bg-color-white">
+										<div class="pie-xs-12">
+											<div class="img-content m-v-5">
+												<img src="img/popular/1.jpg">
+											</div>
+											<div class="desc-content m-v-5">
+												<p>Очки Люцерна прозрачные</p>
+												<div class="price p-v-10">60 000 сум</div>
+											</div>
+											<span class="btn-def">
+												<a href="">Подробнее...</a>
+											</span>
+										</div>
+									</figure>
+
+									<figure class="carousel-cell p-h-25 p-v-30 bg-color-white">
+										<div class="pie-xs-12">
+											<div class="img-content m-v-5">
+												<img src="img/popular/2.jpg">
+											</div>
+											<div class="desc-content m-v-5">
+												<p>Очки Люцерна прозрачные </p>
+												<div class="price p-v-10">60 000 сум</div>
+											</div>
+											<span class="btn-def">
+												<a href="">Подробнее...</a>
+											</span>
+										</div>
+									</figure>
+
+									<figure class="carousel-cell p-h-25 p-v-30 bg-color-white">
+										<div class="pie-xs-12">
+											<div class="img-content m-v-5">
+												<img src="img/popular/3.jpg">
+											</div>
+											<div class="desc-content m-v-5">
+												<p>Очки Люцерна прозрачные</p>
+												<div class="price p-v-10">60 000 сум</div>
+											</div>
+											<span class="btn-def">
+												<a href="">Подробнее...</a>
+											</span>
+										</div>
+									</figure>
+
+									<figure class="carousel-cell p-h-25 p-v-30 bg-color-white">
+										<div class="pie-xs-12">
+											<div class="img-content m-v-5">
+												<img src="img/popular/4.jpg">
+											</div>
+											<div class="desc-content m-v-5">
+												<p>Очки Люцерна прозрачные</p>
+												<div class="price p-v-10">60 000 сум</div>
+											</div>
+											<span class="btn-def">
+												<a href="">Подробнее</a>
+											</span>
+										</div>
+									</figure>
+									
+									<figure class="carousel-cell p-h-25 p-v-30 bg-color-white">
+										<div class="pie-xs-12">
+											<div class="img-content m-v-5">
+												<img src="img/popular/1.jpg">
+											</div>
+											<div class="desc-content m-v-5">
+												<p>Очки Люцерна прозрачные</p>
+												<div class="price p-v-10">60 000 сум</div>
+											</div>
+											<span class="btn-def">
+												<a href="">Подробнее</a>
+											</span>
+										</div>
+									</figure>
+
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+
+			<div class="row short-about bg-about" style="background: url('img/bg/about-1.jpg');">
+				<div class="container">
+					<div class="clearfix row p-v-120 p-h-70">
+						<div class="short-about-content col-xs-12 bg-color-white p-h-50 p-v-60">
+
+							<div class="col-md-8">
+								<h4><strong>ООО «Стандарт Защита»</strong></h4>
+								<p>
+									Предприятие ООО	«Бриз-Кама» является одним из самых современных 
+									и перспективных российских разработчиков и изготовителей средств 
+									индивидуальной защиты, которые применяются:
+								</p>
+								<ul>
+									<li>Населением при возникновении чрезвычайных ситуаций и в военное время;</li>
+									<li>Для обеспечения безопасности персонала, работающего на химически опасных и иных вредных производствах;</li>
+									<li>Для защиты личного состава штатных и нештатных аварийно-спасательных формирований</li>
+								</ul>
+								<p>
+									ООО «Бриз-Кама» производить уже давно известные и 
+									зарекомендовавшие себя на рынке средства индивидуальной защиты, 
+									а также осуществляет разработку новых перспективных СИЗ 
+									в соответствии с действующеми нормтивами и 
+									<a href="">методическими рекомендациями.</a>
+								</p>
+							</div>
+							<div class="col-md-4 img-content">
+								<img src="img/other/gas-1.png">
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+		 <div class="min-menu-header hidden-md hidden-lg row">
+		 	<div class="container">
+		 		<div class="min-menu-logo pie-xs-6">
+		 			<img src="img/logo.png">
+		 		</div>
+		 		<div class="min-menu-bar pie-xs-6">
+		 			<a href="#min-menu">
+		 				<div class="bar">
+		 					<span class="icon-bar"></span>
+		 					<span class="icon-bar"></span>
+		 					<span class="icon-bar"></span>
+		 				</div>
+		    	</a>
+		 		</div>
+		 	</div>
+		 </div>
+
+		  <!-- The menu -->
+			<div id="min-menu">
+				<ul>
+					<li><a href="about.html">О компании</a></li>
+					<li><a href="news.html">Новости</a></li>
+					<li><a href="production.html">Продукция</a>
+						<ul class="sub-menu-1">
+							<li><a href="production-article.html">Противогазы гражданские</a>
+							<li><a href="production-article.html">Шланговые дыхательные аппараты</a>
+							<li><a href="production-article.html">Комплектующие противогазов</a>
+							<li><a href="production-article.html">Полумаски со сменными фильтрами</a>
+							<li><a href="production-article.html">Противогазы промышленные</a>
+							<li><a href="production-article.html">Фильтры противогазовые и комбинированные</a>
+							<li><a href="production-article.html">Полумаски противоаэрозольные</a>
+							<li><a href="production-article.html">Самоспасатели</a>
+							<li><a href="production-article.html">Средства индивидуальной защиты головы и лица человека</a>
+							<li><a href="production-article.html">Средства индивидуальной защиты от падения с высоты</a>
+							<li><a href="production-article.html">Измерительные приборы</a>
+						</ul>
+					</li>
+					<li><a href="info.html">Информация</a></li>
+					<li><a href="catalog.html">Каталог</a></li>
+					<li><a href="contacts.html">Контакты</a></li>
+				</ul>
+			</div>
+
+
+
+
+		</div>
+
+
+
+
+	</main><!-- ./MAIN -->
+
+
+
+
+
+	<!-- FOOTER -->
+	<footer id="footer" class="container-fluid align-center-sm">
+		<div class="container">
+			<div class="footer-content">
+
+
+				<div class="sec-1 col-md-3">
+					<div class="footer-logo">
+						<img src="img/logo.png"/>
+						<p>мебель и интерьер по индивидуальным проектом</p>
+					</div>
+					<div class="footer-contacts">
+						<address>м. Львов, вул. Мирзо Улугбек, 317</address>
+						<p>(+998) 90 000-00-00</p>
+						<p>info@bumezo.uz</p>
+					</div>
+				</div>
+
+
+
+				<div class="sec-2 col-md-2">
+					<h4>Навигация</h4>
+
+					<div class="footer-menu">
+						<ul>
+							<li><a href="">Главная</a></li>
+							<li><a href="">О компании</a></li>
+							<li><a href="">Контакты</a></li>
+						</ul>
+					</div>
+				</div>
+
+
+				<div class="sec-3 col-md-5 col-md-offset-1">
+					<h4>Каталог</h4>
+					<div class="footer-cat">
+						<ul>
+							<li><a href="">Кухни</a></li>
+							<li><a href="">Шкафы</a></li>
+							<li><a href="">Спальная мебель</a></li>
+							<li><a href="">Детская мебель</a></li>
+							<li><a href="">Мягкая мебель</a></li>
+							<li><a href="">Гостиная мебель</a></li>
+						</ul>
+					</div>
+					<div class="footer-copy p-v-30 link-hover hidden-xs hidden-sm">
+
+						<p>© <time id="copydate"></time> Bumezo. Все права защищены</p>
+						<script>copydate.innerText = new Date().getFullYear()</script>
+
+						<p>
+							<a href="https://www.life-style.uz" title="Создание и продвижение сайтов в Ташкенте">Создание сайтов</a> 
+							<em><font color="#F0A03D">Life </font></em><font color="ghostwhite">Style</font>
+						</p>
+					</div>
+				</div>
+
+				<div class="sec-4 col-md-1">
+					<div class="footer-social">
+						<ul><li><a href=""><i class="i-ls-facebook-circle"></i></a></li></ul>
+					</div>
+				</div>
+
+
+
+
+			</div>
+
+		
+
+
+
+		</div>
+	</footer>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- SCRIPTS -->
+		<script src="js/scripts.min.js"></script>
+		<script src="js/main.js"></script>
+		
+		<!-- jQuery REVOLUTION Slider  -->
+		<script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+		<script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+
+ 
+
+
+	   <!-- Include jQuery.mmenu .css files -->
+	   <link type="text/css" href="mmenu/jquery.mmenu.all.css" rel="stylesheet" />
+	   <script type="text/javascript" src="mmenu//jquery.mmenu.all.js"></script>
+
+
+
+
+</div> 
+</body>
+</html>
