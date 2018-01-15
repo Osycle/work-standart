@@ -65,7 +65,7 @@ $color-gray_3: #212121;
 									 --- BOOTSTRAP ---
 */
 
-[class*="col"]:not([class*='p']){
+[class*="col"]{
 	padding-left: 0;
 	padding-right: 0;
 }
@@ -1189,7 +1189,9 @@ main{
 
 
 //TEST
-
+#header, .main-content{
+	display: none;
+}
 
 
 
@@ -1235,32 +1237,30 @@ main{
 		}
 	}
 .rev-slider{
+
 	overflow: hidden;
 
-
 	.slide-header{
-		width: 50%;
 		color: white;
 		padding: 0 15px;
 		h1, h2, h3{
 			white-space: normal;
-			line-height: 190%;
+			line-height: 180%;
 		}
 		h1{
 			position: relative;
   		text-align: justify;
 			margin: 0;
-			font-size: em(50, 16);
+			font-size: em(45, 16);
 			font-weight: 600;
 			letter-spacing: 3px;
 		}
 		h2{
 			position: relative;
 			font-weight: 700;
-			font-size: em(35, 16);
+			font-size: em(30, 16);
 		}
 		p{
-			width: 60%;
 			display: inline-block;
 			white-space: normal;
 			position: relative;
@@ -1275,8 +1275,23 @@ main{
 
 	}
 
-
-
+	@media (min-width: 992px) {
+		.slide-header{
+			width: 50%;
+		}
+		p{
+			width: 60%;
+		}
+	}
+	@media (max-width: 991px) {
+		text-align: center;
+		.slide-header{
+			top: 10% !important;
+		}
+		h1, h2{
+			font-size: em(20, 16);
+		}
+	}
 
 	@media only screen and (max-width: 767px){
 
@@ -1606,61 +1621,31 @@ main{
 
 
 #footer{
-	position: relative;
-	background-color: $color-gray_3;
-	font-size: em(15, 16);
+	background-color: $color-1;
 	color: white;
-	p, address{
-		//line-height: 150%;
-	}
-	p{
-		margin: 10px 0;
-		&:nth-letter(2){
-			color: $color-2;
-		}
-	}
-	[class*="sec"]{
-		padding: 30px 15px;
-	}
-	li{
-		display: inline-block;
-	}
-	h4{
-		border-bottom: 1px solid rgba(white, 0.5);
-	}
-	.footer-menu, .footer-cat, .footer-copy{
-		li{
-			margin: 2.5px 0;
-		}
-		a{			
-			@extend .link-anima;
-			padding-bottom: 2px;
-			&:before{
-				background-color: white;
-			}
-		}
-	}
 	.footer-logo{
-		color: $color-gray_1;
+		font-size: 1.4em;
+		color: white;
 	}
 	.footer-menu{
-		li{
-			width: 100%;
+		.sub-menu-1{
+			color: rgba(white, 0.5);
+			text-decoration: underline;
 		}
 	}
-	.footer-cat{
+	.footer-soc{
+	
 		li{
-			width: 49%;
-		}
-	}
-	.footer-social{
-		ul{
-			margin: 20px 0;
-		}
-		a{
+			margin: 5px;
+			font-size: 25px;
 			&:hover{
-				color: $color-1;
+				color: $color-2;
 			}
+		}
+	}
+	@media (min-width: 992px) {
+		.footer-logo{
+			margin-bottom: 100px;
 		}
 	}
 }

@@ -16870,8 +16870,8 @@ label.hamburger {
 
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?kefr26");
-  src: url("../fonts/icomoon.eot?kefr26#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?kefr26") format("truetype"), url("../fonts/icomoon.woff?kefr26") format("woff"), url("../fonts/icomoon.svg?kefr26#icomoon") format("svg");
+  src: url("../fonts/icomoon.eot?gu9jg8");
+  src: url("../fonts/icomoon.eot?gu9jg8#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?gu9jg8") format("truetype"), url("../fonts/icomoon.woff?gu9jg8") format("woff"), url("../fonts/icomoon.svg?gu9jg8#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -16882,33 +16882,35 @@ label.hamburger {
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
-  font-size: 2em;
   text-transform: none;
   line-height: 1;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.i-ls-desk:before {
-  content: "\e900"; }
+.i-ls-google:before {
+  content: "\e906"; }
 
-.i-ls-double-bed:before {
+.i-ls-twitter:before {
   content: "\e901"; }
 
-.i-ls-kitchen:before {
+.i-ls-facebook-logo:before {
+  content: "\e900"; }
+
+.i-ls-instagram:before {
   content: "\e902"; }
 
-.i-ls-facebook-circle:before {
+.i-ls-mail:before {
   content: "\e903"; }
 
-.i-ls-sofa:before {
+.i-ls-phone-receiver:before {
   content: "\e904"; }
 
-.i-ls-television:before {
+.i-ls-serach:before {
   content: "\e905"; }
 
-.i-ls-wardrobe:before {
-  content: "\e906"; }
+.i-ls-vk:before {
+  content: "\e908"; }
 
 /*! Flickity v2.0.8
 http://flickity.metafizzy.co
@@ -17041,7 +17043,7 @@ http://flickity.metafizzy.co
 /*
 									 --- BOOTSTRAP ---
 */
-[class*="col"]:not([class*='p']) {
+[class*="col"] {
   padding-left: 0;
   padding-right: 0; }
 
@@ -17275,7 +17277,7 @@ dib {
 .vam {
   vertical-align: middle; }
 
-.claf, .link-anima::before, #footer .footer-menu a::before, #footer .footer-cat a::before, #footer .footer-copy a::before, .link-anima:hover::before, .tp-bullets .bullet:before {
+.claf, .link-anima::before, .link-anima:hover::before, .tp-bullets .bullet:before {
   content: "";
   position: absolute;
   left: 0;
@@ -17296,12 +17298,12 @@ dib {
   border: 0;
   padding: 0; }
 
-.link-anima, #footer .footer-menu a, #footer .footer-cat a, #footer .footer-copy a {
+.link-anima {
   position: relative;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out; }
-  .link-anima::before, #footer .footer-menu a::before, #footer .footer-cat a::before, #footer .footer-copy a::before {
+  .link-anima::before {
     width: 0%;
     height: 1px;
     top: initial;
@@ -17313,9 +17315,9 @@ dib {
     -o-transition: all 0.225s ease-in-out;
     transition: all 0.225s ease-in-out;
     visibility: hidden; }
-  .link-anima:hover, #footer .footer-menu a:hover, #footer .footer-cat a:hover, #footer .footer-copy a:hover {
+  .link-anima:hover {
     width: 100%; }
-  .link-anima:hover::before, #footer .footer-menu a:hover::before, #footer .footer-cat a:hover::before, #footer .footer-copy a:hover::before {
+  .link-anima:hover::before {
     width: 100%;
     height: 1px;
     visibility: visible; }
@@ -17885,6 +17887,9 @@ main {
     -ms-flex: 4 4;
     flex: 4 4; }
 
+#header, .main-content {
+  display: none; }
+
 .index-slider {
   overflow: hidden; }
 
@@ -17922,25 +17927,23 @@ main {
 .rev-slider {
   overflow: hidden; }
   .rev-slider .slide-header {
-    width: 50%;
     color: white;
     padding: 0 15px; }
     .rev-slider .slide-header h1, .rev-slider .slide-header h2, .rev-slider .slide-header h3 {
       white-space: normal;
-      line-height: 190%; }
+      line-height: 180%; }
     .rev-slider .slide-header h1 {
       position: relative;
       text-align: justify;
       margin: 0;
-      font-size: 3.125em;
+      font-size: 2.8125em;
       font-weight: 600;
       letter-spacing: 3px; }
     .rev-slider .slide-header h2 {
       position: relative;
       font-weight: 700;
-      font-size: 2.1875em; }
+      font-size: 1.875em; }
     .rev-slider .slide-header p {
-      width: 60%;
       display: inline-block;
       white-space: normal;
       position: relative;
@@ -17949,6 +17952,18 @@ main {
     .rev-slider .slide-header .btn-def {
       margin-top: 30px;
       width: 220px; }
+  @media (min-width: 992px) {
+    .rev-slider .slide-header {
+      width: 50%; }
+    .rev-slider p {
+      width: 60%; } }
+  @media (max-width: 991px) {
+    .rev-slider {
+      text-align: center; }
+      .rev-slider .slide-header {
+        top: 10% !important; }
+      .rev-slider h1, .rev-slider h2 {
+        font-size: 1.25em; } }
 
 /* clear fix */
 .grid-img:after {
@@ -18123,36 +18138,22 @@ main {
 										 --- FOOTER ---
 */
 #footer {
-  position: relative;
-  background-color: #212121;
-  font-size: 0.9375em;
+  background-color: #2d6eb7;
   color: white; }
-  #footer p {
-    margin: 10px 0; }
-    #footer p:nth-letter(2) {
-      color: #F58833; }
-  #footer [class*="sec"] {
-    padding: 30px 15px; }
-  #footer li {
-    display: inline-block; }
-  #footer h4 {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
-  #footer .footer-menu li, #footer .footer-cat li, #footer .footer-copy li {
-    margin: 2.5px 0; }
-  #footer .footer-menu a, #footer .footer-cat a, #footer .footer-copy a {
-    padding-bottom: 2px; }
-    #footer .footer-menu a:before, #footer .footer-cat a:before, #footer .footer-copy a:before {
-      background-color: white; }
   #footer .footer-logo {
-    color: #AABFDC; }
-  #footer .footer-menu li {
-    width: 100%; }
-  #footer .footer-cat li {
-    width: 49%; }
-  #footer .footer-social ul {
-    margin: 20px 0; }
-  #footer .footer-social a:hover {
-    color: #2d6eb7; }
+    font-size: 1.4em;
+    color: white; }
+  #footer .footer-menu .sub-menu-1 {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: underline; }
+  #footer .footer-soc li {
+    margin: 5px;
+    font-size: 25px; }
+    #footer .footer-soc li:hover {
+      color: #F58833; }
+  @media (min-width: 992px) {
+    #footer .footer-logo {
+      margin-bottom: 100px; } }
 
 /*
 										 --- OTHER ---

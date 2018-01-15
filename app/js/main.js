@@ -232,52 +232,14 @@ $(function(){
 
 	});
 
-	var images = 						 		document.images,
-			imagesTotalCount = 			images.length,
-			imagesLoadedCount = 		0,
-			preloadPercent = 		 		$(".percent");
-
-	for ( var i = 0; i < imagesTotalCount ; i++ ) {
-		var image_clone = new Image();
-				image_clone.onload = 		image_loaded;
-				image_clone.onerror = 	image_loaded;
-				image_clone.src = 			images[i].src;
-
-	}
-
-	function image_loaded (){
-		imagesLoadedCount++;
-
-		var per = ( ( 100 / imagesTotalCount ) * imagesLoadedCount ) << 0 ;
-
-		setTimeout( function(){
-			$(preloadPercent).text(  per +  "%"); 
-		}, 1)
-
-		//$("#pre-logo").css("opacity", per/100);
-
-		imagesLoadedCount >= imagesTotalCount ? 
-
-			setTimeout( function (){
-
-				$(".preloader").fadeToggle();
-				//$( "body" ).css("overflow-y", "auto");
-				onLoaded();
-
-			}, 300)
-
-		: void(0);
-	}
-
-
 
 	//PAGES REV SLIDER
 	if( $('.rev-slider-page') )
 	    $('.rev-slider-page').revolution({
 				delay:6000,
-				startwidth: $( window ).width() < 992 ? $( window ).width() : 1170,
+				//startwidth: $( window ).width() < 992 ? $( window ).width() : 1170,
 				//startwidth: 1170,
-				startheight: $( window ).width() < 992 ? 500 : 500,
+				startheight: checkView(991) ? 645 : 645,
 				autoHeight:"off",
 				fullScreenAlignForce:"off",
 
