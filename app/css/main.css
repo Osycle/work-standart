@@ -16903,10 +16903,10 @@ label.hamburger {
 .i-ls-mail:before {
   content: "\e903"; }
 
-.i-ls-phone-receiver:before {
+.i-ls-phone:before {
   content: "\e904"; }
 
-.i-ls-serach:before {
+.i-ls-search:before {
   content: "\e905"; }
 
 .i-ls-vk:before {
@@ -17438,10 +17438,10 @@ input.pie-form-control {
     line-height: 180%; }
   .skin-header-top i {
     font-size: 20px; }
-  .skin-header-top .fa-phone {
-    font-size: 22px; }
-  .skin-header-top .fa-envelope {
-    font-size: 18px; }
+  .skin-header-top .i-ls-phone {
+    font-size: 20px; }
+  .skin-header-top .i-ls-mail {
+    font-size: 21px; }
 
 .logo {
   height: 90px; }
@@ -17887,7 +17887,7 @@ main {
     -ms-flex: 4 4;
     flex: 4 4; }
 
-#header, .main-content {
+.main-content {
   display: none; }
 
 .index-slider {
@@ -18143,9 +18143,21 @@ main {
   #footer .footer-logo {
     font-size: 1.4em;
     color: white; }
+  #footer .footer-menu li {
+    width: 100%;
+    display: inline-block;
+    line-height: 200%; }
   #footer .footer-menu .sub-menu-1 {
     color: rgba(255, 255, 255, 0.5);
-    text-decoration: underline; }
+    text-decoration: underline;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    columns: 2; }
+    #footer .footer-menu .sub-menu-1 li {
+      width: 100%;
+      display: inherit; }
+      #footer .footer-menu .sub-menu-1 li:hover {
+        color: white; }
   #footer .footer-soc li {
     margin: 5px;
     font-size: 25px; }
@@ -18153,7 +18165,13 @@ main {
       color: #F58833; }
   @media (min-width: 992px) {
     #footer .footer-logo {
-      margin-bottom: 100px; } }
+      margin-bottom: 100px; }
+    #footer .footer-menu {
+      height: 300px; } }
+  @media (max-width: 991px) {
+    #footer .footer-soc li {
+      margin: 30px 10px;
+      display: inline-block; } }
 
 /*
 										 --- OTHER ---

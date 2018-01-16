@@ -582,11 +582,11 @@ $header-bottom-height: 115px;
 	i{
 		font-size: 20px;
 	}
-	.fa-phone{
-		font-size: 22px;	
+	.i-ls-phone{
+		font-size: 20px;	
 	}
-	.fa-envelope{
-		font-size: 18px;	
+	.i-ls-mail{
+		font-size: 21px;	
 	}
 }
 
@@ -1189,7 +1189,7 @@ main{
 
 
 //TEST
-#header, .main-content{
+.main-content{
 	display: none;
 }
 
@@ -1237,9 +1237,7 @@ main{
 		}
 	}
 .rev-slider{
-
 	overflow: hidden;
-
 	.slide-header{
 		color: white;
 		padding: 0 15px;
@@ -1628,9 +1626,27 @@ main{
 		color: white;
 	}
 	.footer-menu{
+		li{
+			width: 100%;
+			display: inline-block;
+			line-height: 200%;
+
+		}
+		.sub-menu{
+			//width: 100%;
+		}
 		.sub-menu-1{
 			color: rgba(white, 0.5);
 			text-decoration: underline;
+			columns: 2;
+			li{
+				width: 100%;
+				display: inherit;
+				&:hover{
+					//color: $color-2;
+					color: white;
+				}
+			}
 		}
 	}
 	.footer-soc{
@@ -1646,6 +1662,17 @@ main{
 	@media (min-width: 992px) {
 		.footer-logo{
 			margin-bottom: 100px;
+		}
+		.footer-menu{
+			height: 300px;
+		}
+	}
+	@media ( max-width: 991px ){
+		.footer-soc{
+			li{
+				margin: 30px 10px;
+				display: inline-block;
+			}
 		}
 	}
 }
