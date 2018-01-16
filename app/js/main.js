@@ -48,7 +48,7 @@ $(function(){
   // POPULER
 	var carouselPopular = $('.carousel-popular .carousel-content').flickity({
 		//setGallerySize: false,
-		autoPlay: 1500,
+		autoPlay: 3000,
 		arrowShape: arrowStyle,
 		imagesLoaded: true,
 		prevNextButtons: true,

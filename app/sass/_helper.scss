@@ -312,20 +312,9 @@ html{
 	position: relative;
 	flex-flow: row wrap;
 }
-[class*="pie-xs-flex"]{
+[class*="pie-xs-flex"], [class*="pie-sm-flex"], [class*="pie-md-flex"], [class*="pie-lg-flex"]{
 	align-self: center;
 }
-
-
-@for $i from 0 through 12{
-	.pie-xs-#{$i}, .pie-sm-#{$i}, .pie-md-#{$i}, .pie-lg-#{$i}{
-		display: table-cell;
-		vertical-align: middle;
-	}
-}
-
-
-
 @for $i from 0 through 10{
 	.pie-xs-flex-#{$i} {
 		flex-basis: (10*$i)+%;
@@ -333,63 +322,112 @@ html{
 }
 
 
-@for $i from 0 through 12{
-	.pie-xs-#{$i}{
-		width: ( 0.0 + ($i/12) )+% ;
-	}
-}
-
-
-
-
-
 
 @media (min-width:768px){
-
-	@for $i from 0 through 12{
-		.pie-sm-#{$i}{
-			width: ( 0.0 + ($i/12) )+% ;
-		}
-	}
 	@for $i from 0 through 10{
 		.pie-sm-flex-#{$i} {
 			flex-basis: (10*$i)+%;
 		}
 	}
-
 }
 
 @media (min-width:992px){
-
-	@for $i from 0 through 12{
-		.pie-md-#{$i}{
-			width: ( 0.0 + ($i/12) )+% ;
-		}
-	}
 	@for $i from 0 through 10{
 		.pie-md-flex-#{$i} {
 			flex-basis: (10*$i)+%;
 		}
 	}
-
 }
 
 
-
 @media (min-width:1200px){
-
-	@for $i from 0 through 12{
-		.pie-lg-#{$i}{
-			width: ( 0.0 + ($i/12) )+% ;
-		}
-	}
 	@for $i from 0 through 10{
 		.pie-lg-flex-#{$i} {
 			flex-basis: (10*$i)+%;
 		}
 	}
-
 }
+
+
+
+
+
+// PIE BOOTSTRAP
+
+
+
+@for $i from 0 through 12{
+	.pie-xs-#{$i}{
+		width: ( ($i*100) /12)+%;
+	}
+}
+
+@media (min-width:768px){
+	[class*="pie-xs"]:not([class*="-flex"]){
+		display: table-cell;
+		vertical-align: middle;
+	}
+	@for $i from 0 through 12{
+		.pie-sm-#{$i}{
+			width: ( ($i*100) /12)+%;
+		}
+	}
+}
+
+@media (min-width:992px){
+	[class*="pie-md"]:not([class*="-flex"]){
+		display: table-cell;
+		vertical-align: middle;
+	}
+	@for $i from 0 through 12{
+		.pie-md-#{$i}{
+			width: ( ($i*100) /12)+%;
+		}
+	}
+}
+
+@media (min-width:1200px){
+	[class*="pie-lg"]:not([class*="-flex"]){
+		display: table-cell;
+		vertical-align: middle;
+	}
+	@for $i from 0 through 12{
+		.pie-lg-#{$i}{
+			width: ( ($i*100) /12)+%;
+		}
+	}
+}
+
+
+
+@for $i from 0 through 12{
+	.pie-xs-elastic-#{$i}{
+		width: ( 0.0 + ($i/12) )+% ;
+	}
+}
+@media (min-width:768px){
+	@for $i from 0 through 12{
+		.pie-sm-elastic-#{$i}{
+			width: ( 0.0 + ($i/12) )+% ;
+		}
+	}
+}
+@media (min-width:992px){
+	@for $i from 0 through 12{
+		.pie-md-elastic-#{$i}{
+			width: ( 0.0 + ($i/12) )+% ;
+		}
+	}
+}
+
+@media (min-width:1200px){
+	@for $i from 0 through 12{
+		.pie-lg-elastic-#{$i}{
+			width: ( 0.0 + ($i/12) )+% ;
+		}
+	}
+}
+
 
 
 
