@@ -17372,7 +17372,7 @@ dib {
   width: 100%;
   height: 100%; }
 
-.fuller, .short-production-content .cell-hover, .short-novelties-content .screen-content {
+.fuller, .menu .sub-figure .cell-hover, .short-production-content .cell-hover, .short-novelties-content .screen-content {
   height: 100%;
   width: 100%;
   position: absolute; }
@@ -17568,6 +17568,12 @@ dib {
   height: 115px; }
   .menu li {
     display: inline-block; }
+  .menu i {
+    -webkit-transition: -webkit-transform 0.4s ease-out;
+    transition: -webkit-transform 0.4s ease-out;
+    -o-transition: transform 0.4s ease-out;
+    transition: transform 0.4s ease-out;
+    transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out; }
   .menu ul > li {
     font-weight: 700;
     font-size: 1em;
@@ -17577,6 +17583,16 @@ dib {
     .menu ul > li > a {
       padding: 50px 30px;
       display: block; }
+    .menu ul > li:hover .sub-figure {
+      opacity: 1; }
+      .menu ul > li:hover .sub-figure, .menu ul > li:hover .sub-figure figure {
+        -webkit-transform: unset;
+        -ms-transform: unset;
+        transform: unset; }
+    .menu ul > li:hover i {
+      -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg); }
   .menu .fa, .menu .short-schema-content .item:before, .short-schema-content .menu .item:before {
     font-size: 23px;
     color: #2d6eb7;
@@ -17604,17 +17620,30 @@ dib {
       padding: 10px 10px;
       margin-top: 10px; }
   .menu .sub-figure {
-    padding-top: 30px;
-    border: 5px solid #e69700;
-    -webkit-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
     position: absolute;
+    padding: 30px 15px 15px 15px;
+    border: 5px solid #e69700;
+    border-top: transparent;
+    -webkit-transition: opacity 0.4s ease-in-out, -webkit-transform  0.4s ease-in-out 0.15s;
+    transition: opacity 0.4s ease-in-out, -webkit-transform  0.4s ease-in-out 0.15s;
+    -o-transition: transform  0.4s ease-in-out 0.15s, opacity 0.4s ease-in-out;
+    transition: transform  0.4s ease-in-out 0.15s, opacity 0.4s ease-in-out;
+    transition: transform  0.4s ease-in-out 0.15s, opacity 0.4s ease-in-out, -webkit-transform  0.4s ease-in-out 0.15s;
     font-size: 0.9em;
+    font-weight: 500;
+    opacity: 0;
+    -webkit-perspective: 700px;
+    perspective: 700px;
+    -webkit-perspective-origin: center;
+    perspective-origin: center;
+    -webkit-transform: scale(0.75) perspective(560px) rotateX(-90deg);
+    transform: scale(0.75) perspective(560px) rotateX(-90deg);
+    -webkit-transform-origin: 40% 0;
+    -ms-transform-origin: 40% 0;
+    transform-origin: 40% 0;
     background-color: #ffa800;
     width: 90%;
-    left: 0;
-    font-weight: 300; }
+    left: 0; }
     .menu .sub-figure p {
       text-transform: none; }
     .menu .sub-figure:before {
@@ -17627,23 +17656,42 @@ dib {
       left: 50%;
       margin-top: -15px;
       margin-left: -60px; }
-    .menu .sub-figure figure {
-      overflow: hidden; }
+    .menu .sub-figure .cell-content {
+      position: relative;
+      overflow: hidden;
+      background-color: white;
+      color: black; }
+      .menu .sub-figure .cell-content .desc-content {
+        padding: 0 30% 0 10px;
+        position: relative;
+        z-index: 1;
+        height: 120px; }
+      .menu .sub-figure .cell-content .img-content {
+        position: absolute;
+        -webkit-transition: right 0.6s ease-in-out;
+        -o-transition: right 0.6s ease-in-out;
+        transition: right 0.6s ease-in-out;
+        top: 0;
+        right: -25px;
+        width: 125px; }
+      .menu .sub-figure .cell-content:hover .cell-hover {
+        opacity: 1; }
+      .menu .sub-figure .cell-content:hover .img-content {
+        right: 0; }
+      .menu .sub-figure .cell-content:hover a {
+        color: white;
+        text-decoration: underline; }
     .menu .sub-figure .cell-hover {
+      -webkit-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      pointer-events: none;
+      opacity: 0;
+      background-color: rgba(45, 110, 183, 0.8);
       position: absolute;
       width: 100%;
       height: 100%;
       z-index: 1; }
-    .menu .sub-figure .desc-content {
-      height: 125px;
-      position: relative;
-      z-index: 1;
-      padding-right: 40% !important; }
-    .menu .sub-figure .img-content {
-      position: absolute;
-      top: 0;
-      width: 130px;
-      right: 0; }
 
 .mm-opened .min-menu-header {
   opacity: 0; }

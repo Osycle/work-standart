@@ -639,6 +639,7 @@ $header-min-menu: 80px;
 	li{
 		display: inline-block;
 	}
+	i{transition: transform 0.4s ease-out;}
  	ul > li{
 		font-weight: 700;
 		font-size: 1em;
@@ -650,7 +651,18 @@ $header-min-menu: 80px;
 			padding: 50px 30px;
 			display: block;
 		}
-
+		&:hover{
+			.sub-figure{
+				opacity: 1;
+				&, figure{
+					transform: unset;
+				}
+				//visibility: visible;
+			}
+			i{
+				transform: rotate(180deg);
+			}
+		}
 	}
 
 	.fa{
@@ -686,20 +698,41 @@ $header-min-menu: 80px;
 		}
 	}
 
+
+
+
 	.sub-figure{
-		padding-top: 30px;
-		border: 5px solid darken($color-4, 5%);
-		transition: all 0.3s ease-in-out;
+		//visibility:  hidden;
 		position: absolute;
+		padding: 30px 15px 15px 15px;
+		border: 5px solid darken($color-4, 5%); 
+		border-top: transparent;
+		transition: transform  0.4s ease-in-out 0.15s, opacity 0.4s ease-in-out;
 		font-size: 0.9em;
+		font-weight: 500;
+
+		opacity: 0;
+		perspective: 700px;
+		perspective-origin: center;
+		//transform-style: preserve-3d;
+		transform: scale(0.75) perspective(560px) rotateX(-90deg);
+		transform-origin: 40% 0;
+
+
+		//font-size: 0.75em;
+		//font-weight: 600;
 
 		background-color: $color-4;
 		width: 90%;
 		left: 0;
-		font-weight: 300;
+
+		figure{
+			//transition: all 0.3s ease-in-out;
+		}
 		p{
 			text-transform: none;
 		}
+	
 		&:before{
 			@extend .claf;
 			background-color: $color-4;
@@ -710,27 +743,53 @@ $header-min-menu: 80px;
 			margin-top: -15px;
 			margin-left: -60px;
 		}
-		figure{
+
+		.cell-content{
+			position: relative;
 			overflow: hidden;
+			background-color: white;
+			color: black;
+			.desc-content{
+				padding: 0 30% 0 10px;
+				position: relative;
+				z-index: 1;
+				//height: 130px;
+				height: 120px;
+			}
+			.img-content{
+				position: absolute;
+				transition: right 0.6s ease-in-out;
+				top: 0;
+				
+				right: -25px;
+				//width: 132px;
+				width: 125px;
+			}
+			&:hover{
+				.cell-hover{
+					opacity: 1;
+				}
+				.img-content{
+					right: 0;
+				}
+				a{
+					color: white;
+					text-decoration: underline;
+				}
+			}
 		}
 		.cell-hover{
-	    position: absolute;
+			@extend .fuller;
+			transition: all 0.3s ease-in-out;
+			pointer-events: none;
+			opacity: 0;
+			background-color: rgba($color-1, 0.8);
+			position: absolute;
 	    width: 100%;
 	    height: 100%;
 	    z-index: 1;
 		}
-		.desc-content{
-			height: 125px;
-			position: relative;
-			z-index: 1;
-			padding-right: 40% !important;
-		}
-		.img-content{
-			position: absolute;
-			top: 0;
-			width: 130px;
-			right: 0;
-		}
+
 	}
 
 
