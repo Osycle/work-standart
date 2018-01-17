@@ -45,8 +45,28 @@ $(function(){
 		  x2: 70, y2: 40,
 		  x3: 30
 		}
-  // POPULER
+
+  // POPULAR
 	var carouselPopular = $('.carousel-popular .carousel-content').flickity({
+		//setGallerySize: false,
+		autoPlay: 3000,
+		arrowShape: arrowStyle,
+		imagesLoaded: true,
+		prevNextButtons: checkView(991),
+		draggable: !checkView(991),
+		wrapAround: true,
+		//adaptiveHeight: true,
+		//selectedAttraction: 0.2,
+		//friction: 0.2,
+		//rightToLeft: true,
+		pageDots: false,
+		contain: true,
+		percentPosition: true,
+		cellAlign: checkView(991) ? "left" : "center"
+	});
+
+	// NEW
+	var carouselNews = $('.carousel-news').flickity({
 		//setGallerySize: false,
 		autoPlay: 3000,
 		arrowShape: arrowStyle,
@@ -58,11 +78,16 @@ $(function(){
 		//selectedAttraction: 0.2,
 		//friction: 0.2,
 		//rightToLeft: true,
-		pageDots: false,
-		contain: true,
+		pageDots: true,
+		//contain: true,
 		percentPosition: true,
-		cellAlign: 'left'
+		cellAlign: 'center'
 	});
+
+
+
+
+
 
 
 	var carouselStock = $('.carousel-stock .carousel-content').flickity({

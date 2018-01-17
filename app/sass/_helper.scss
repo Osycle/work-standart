@@ -361,12 +361,11 @@ html{
 		width: ( ($i*100) /12)+%;
 	}
 }
-
+[class*="pie-xs"]:not([class*="-flex"]){
+	display: table-cell;
+	vertical-align: middle;
+}
 @media (min-width:768px){
-	[class*="pie-xs"]:not([class*="-flex"]){
-		display: table-cell;
-		vertical-align: middle;
-	}
 	@for $i from 0 through 12{
 		.pie-sm-#{$i}{
 			width: ( ($i*100) /12)+%;
