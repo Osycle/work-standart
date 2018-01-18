@@ -17156,6 +17156,11 @@ dib {
 .vam {
   vertical-align: middle; }
 
+.vam-table, .production-article .align-cells figure .img-content {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center; }
+
 .claf, .link-anima::before, .link-anima:hover::before, .menu [class*="sub"]:before, .tp-bullets .bullet:before, .short-schema-content .item:before {
   content: "";
   position: absolute;
@@ -17729,9 +17734,6 @@ dib {
   background-size: cover; }
 
 .banner-content {
-  height: 250px;
-  display: table-cell;
-  vertical-align: middle;
   position: relative; }
   .banner-content .breadcrumb {
     padding: 0; }
@@ -18335,13 +18337,16 @@ img[align="left"] {
     margin-top: 45px; } }
 
 .news .short-news-content {
-  margin-left: -4.16667%;
-  margin-right: -4.16667%; }
+  margin-left: -4.41667%;
+  margin-right: -4.41667%;
+  letter-spacing: -6px; }
+  .news .short-news-content * {
+    letter-spacing: 0; }
   .news .short-news-content figure {
-    float: left;
     width: 25%;
     margin-left: 4.16667%;
-    margin-right: 4.16667%; }
+    margin-right: 4.16667%;
+    float: left; }
   .news .short-news-content figure {
     margin-top: 30px;
     margin-bottom: 30px; }
@@ -18351,23 +18356,114 @@ img[align="left"] {
 
 @media (max-width: 991px) {
   .news .short-news-content {
-    margin-left: -6.25%;
-    margin-right: -6.25%; }
+    margin-left: -6.5%;
+    margin-right: -6.5%;
+    letter-spacing: -6px; }
+    .news .short-news-content * {
+      letter-spacing: 0; }
     .news .short-news-content figure {
-      float: left;
       width: 37.5%;
       margin-left: 6.25%;
-      margin-right: 6.25%; } }
+      margin-right: 6.25%;
+      float: left; } }
 
 @media (max-width: 767px) {
   .news .short-news-content {
-    margin-left: -5%;
-    margin-right: -5%; }
+    margin-left: -5.25%;
+    margin-right: -5.25%;
+    letter-spacing: -6px; }
+    .news .short-news-content * {
+      letter-spacing: 0; }
     .news .short-news-content figure {
-      float: left;
       width: 90%;
       margin-left: 5%;
-      margin-right: 5%; } }
+      margin-right: 5%;
+      float: left; } }
+
+.production-article .align-cells {
+  margin-left: -1.5%;
+  margin-right: -1.5%;
+  letter-spacing: -6px; }
+  .production-article .align-cells * {
+    letter-spacing: 0; }
+  .production-article .align-cells figure {
+    width: 22.5%;
+    margin-left: 1.25%;
+    margin-right: 1.25%;
+    display: inline-table;
+    vertical-align: top;
+    width: 22.5%; }
+    .production-article .align-cells figure .img-content img {
+      max-height: 100%;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      margin: 0 auto;
+      display: block; }
+  .production-article .align-cells figure {
+    border: 1px solid #ffa800;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    padding: 15px 25px;
+    min-height: 360px; }
+    .production-article .align-cells figure a {
+      display: unset; }
+    .production-article .align-cells figure .img-content {
+      height: 220px; }
+    .production-article .align-cells figure .img-content {
+      border-bottom: 3px solid #ffa800; }
+      .production-article .align-cells figure .img-content img {
+        padding-bottom: 10px; }
+    .production-article .align-cells figure, .production-article .align-cells figure .img-content {
+      -webkit-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
+    .production-article .align-cells figure:hover, .production-article .align-cells figure:hover * {
+      border-color: #2d6eb7; }
+
+@media (max-width: 991px) {
+  .production-article .align-cells {
+    margin-left: -2.75%;
+    margin-right: -2.75%;
+    letter-spacing: -6px; }
+    .production-article .align-cells * {
+      letter-spacing: 0; }
+    .production-article .align-cells figure {
+      width: 45%;
+      margin-left: 2.5%;
+      margin-right: 2.5%;
+      display: inline-table;
+      vertical-align: top;
+      width: 45%; }
+      .production-article .align-cells figure .img-content img {
+        max-height: 100%;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+        display: block; } }
+
+@media (max-width: 767px) {
+  .production-article .align-cells {
+    margin-left: -5.25%;
+    margin-right: -5.25%;
+    letter-spacing: -6px; }
+    .production-article .align-cells * {
+      letter-spacing: 0; }
+    .production-article .align-cells figure {
+      width: 90%;
+      margin-left: 5%;
+      margin-right: 5%;
+      display: inline-table;
+      vertical-align: top;
+      width: 90%; }
+      .production-article .align-cells figure .img-content img {
+        max-height: 100%;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+        display: block; } }
 
 /*
 										 --- FOOTER ---
