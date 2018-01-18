@@ -62,6 +62,39 @@ $color-gray_3: #212121;
 
 }
 
+
+
+
+@mixin inline-boxed( $width: 75, $item: 3 ) {
+
+	
+	margin-left: -( (100-$width)/($item*2) )+%;
+	margin-right: -( (100-$width)/($item*2) )+%;
+
+	figure{
+		float: left;
+		width: ($width/$item)+%;
+		margin-left: ( (100-$width)/($item*2) )+%;
+		margin-right: ( (100-$width)/($item*2) )+%;
+	}
+
+}
+
+	// .short-news-content{
+	// 	margin: 30px (-(25/6))+%;;
+	// 	*{
+	// 		border-radius: 0;
+	// 	}
+	// }
+	// figure{
+	// 	float: left;
+	// 	width: (75/3)+%;
+	// 	margin: 25px (25/6)+%;
+
+
+
+
+
 /*
 									 --- BOOTSTRAP ---
 */
@@ -372,6 +405,11 @@ dib{
 	padding: 0;
 }
 
+.inline-boxed{
+
+}
+
+
 .link-anima{
 	position: relative;
 	transition:all 0.2s ease-in-out; 
@@ -440,7 +478,9 @@ dib{
 	.pagination{
 		li{
 			display: inline-block;
-			border-radius: 5px;
+			border-radius: 50%;
+			margin: 0 5px;
+			font-weight: 500;
 			&:hover{
 				a{
 					color: $color-1;
@@ -448,12 +488,15 @@ dib{
 			}
 			a{
 				border:1px solid transparent;
-				color: white;
+				color: black;
+
 				border: 0;
 				background-color: transparent;
 
 			}
 			&.active{
+				background-color: $color-4;
+				a{color: white;}
 				&:hover{
 					a{
 						cursor: pointer;
@@ -463,9 +506,14 @@ dib{
 				a{
 					background-color: transparent;
 				}
-				border:1px solid $color-1;
+				border:1px solid transparent;
 			}
 		}
+	}
+	.float-right{
+		position: absolute;
+		text-decoration: underline;
+    right: 0px;
 	}
 }
 
@@ -476,13 +524,15 @@ dib{
 [class*='list-style']{
 	ul{
 		margin: 15px 0;
-	}
-	li{
+		&:not([class]) li{
+			padding-left: 15px;
+		}
 		margin: auto 15px;
 		list-style: disc;
 		line-height: 170%;
 		list-style-position: outside;
 	}
+
 }
 
 
@@ -636,8 +686,14 @@ $header-min-menu: 80px;
 .menu{
 	//text-align: center;
 	height: 115px;
+	text-align: center;
 	li{
+		text-align: left;
 		display: inline-block;
+		transition: color 0.3s ease-in-out 0;
+		&.active, &:hover{
+			color: $color-4;
+		}
 	}
 	i{transition: transform 0.4s ease-out;}
  	ul > li{
@@ -650,100 +706,85 @@ $header-min-menu: 80px;
 		& > a{
 			padding: 50px 30px;
 			display: block;
+			@media (max-width: 1199px) {
+				padding: 50px 5px;
+			}
 		}
 		&:hover{
-			.sub-figure{
+			.sub-figure, .sub-menu-1{
 				opacity: 1;
+				visibility: visible;
 				&, figure{
 					transform: unset;
 				}
 				//visibility: visible;
 			}
-			i{
-				transform: rotate(180deg);
-			}
+			i{ transform: rotate(180deg); }
 		}
 	}
-
 	.fa{
 		font-size: 23px;
 		color: $color-1;
 		vertical-align: sub;
 	}
-
 	.sub-menu-1{
-		transition: all 0.3s ease-in-out;
-		position: absolute;
-		background-color: white;
-		padding: 10px 10px 20px;
-		z-index: -1;
-
-		visibility: hidden;
-		transform: matrix(1, 0, 0, 1, 0, -120);
-		opacity: 0;
-
-		//display: flex;
-		//flex-wrap: wrap;
-		li{
-			width: 50%;
-			font-weight: 400;
-			text-transform: none;
+		color: white;
+		width: 250px;
+		padding: 12px 12px;
+		a{
+			padding: 10px 5px;
 			&:hover{
-				color: $color-4;
+				color: $color-1;
 			}
 		}
-		a{
-			padding: 10px 10px;
-			margin-top: 10px;
-		}
+
 	}
 
-
-
-
-	.sub-figure{
-		//visibility:  hidden;
+	[class*="sub"]{
+		visibility:  hidden;
 		position: absolute;
-		padding: 30px 15px 15px 15px;
+		transition: transform  0.4s ease-in-out 0.2s, 
+								visibility  0.2s ease-in-out 0.2s,
+								opacity 0.4s ease-in-out;
 		border: 5px solid darken($color-4, 5%); 
-		border-top: transparent;
-		transition: transform  0.4s ease-in-out 0.15s, opacity 0.4s ease-in-out;
+		border-top-color: transparent;
 		font-size: 0.9em;
 		font-weight: 500;
-
 		opacity: 0;
 		perspective: 700px;
 		perspective-origin: center;
 		//transform-style: preserve-3d;
 		transform: scale(0.75) perspective(560px) rotateX(-90deg);
 		transform-origin: 40% 0;
-
-
-		//font-size: 0.75em;
-		//font-weight: 600;
-
 		background-color: $color-4;
-		width: 90%;
-		left: 0;
 
-		figure{
-			//transition: all 0.3s ease-in-out;
-		}
-		p{
-			text-transform: none;
-		}
-	
 		&:before{
 			@extend .claf;
 			background-color: $color-4;
 			width: 30px;
 			transform: rotate(45deg) matrix(1,0.2,0.2,1,0,0);
 			height: 30px;
-			left: 50%;
-			margin-top: -15px;
-			margin-left: -60px;
+			//left: 50%;
+			z-index: -1;
+			//margin-top: -15px;
+	  	left: 70px;
+    	margin-top: -15px;
 		}
 
+
+	}
+
+
+	.sub-figure{
+		padding: 30px 15px 15px 15px;
+		width: 90%;
+		left: 0;
+		p{text-transform: none;}
+	
+		&:before{
+			left: 50%;
+			margin-left: -60px;
+		}
 		.cell-content{
 			position: relative;
 			overflow: hidden;
@@ -838,7 +879,12 @@ $header-min-menu: 80px;
 .mm-menu.mm-theme-dark{
 	background-color: $color-1 !important;
 }
-
+#min-menu{
+	visibility: hidden;
+	&.in{
+		visibility: visible;
+	}
+}
 
 
 
@@ -1163,23 +1209,28 @@ $header-min-menu: 80px;
 
 .breadcrumb{
 	background: transparent;
+	color: black;
 	&, a, .active{ 
-		color: rgba(white, 0.5);
-		text-transform: uppercase;
+		color: rgba(black, 0.4);
 		transition: all 0.3s ease-in;
 		font-weight: 500;
 		font-size: em(16, 16);
 		a:hover{
-			letter-spacing: 1px;
+			transform: translateY(-5px);
 			text-decoration: none;
-			color: white;
+			color: $color-2;
 		}
+	}
+	.active{
+		a{color: $color-2;}
 	}
 	& > li + li:before{
 
-		color: rgba(white, 0.4);
+		color: rgba(black, 0.4);
 		font-family: FontAwesome;
-		content: "\f0da";
+		content: "/";
+		font-weight: 700;
+		font-size: 1.5em;
 		margin:0  15px;
 	}
 	li{
@@ -1192,7 +1243,10 @@ $header-min-menu: 80px;
 /*
 										 --- CONTENT ---
 */
-
+h1, h2, h3, h4{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
 h1{
 	position: relative;
 	font-weight: 700;
@@ -1203,9 +1257,10 @@ h1{
 
 }
 h2{
-	text-transform: uppercase;
 	font-size: em(25, 16);
-}
+	margin-top: 20px;
+	margin-bottom: 10px;
+} 
 h3{
 
 	font-size: em(22, 16);
@@ -1219,12 +1274,7 @@ h4{
 h5{
 	font-size: inherit;
 }
-h1, h2, h3, h4{
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-h1, h2, h3, h4, h5{
-}
+
 p{
 	font-size: em(16, 16);
 }
@@ -1252,6 +1302,15 @@ main{
 	}
 
 }
+img[align="right"]{
+	margin: 15px;
+	margin-right: 0;
+}
+img[align="left"]{
+	margin: 15px;
+	margin-left: 0;
+}
+
 .main-content{
 
 }
@@ -1302,6 +1361,7 @@ main{
 //TEST
 .main-content{
 	//display: none;
+
 }
 
 
@@ -1352,6 +1412,7 @@ main{
 	.slide-header{
 		color: white;
 		padding: 0 15px;
+		text-shadow: 0 0 2px rgba(black, 0.5);
 		h1, h2, h3{
 			white-space: normal;
 			line-height: 180%;
@@ -1366,6 +1427,7 @@ main{
 		}
 		h2{
 			position: relative;
+			text-transform: uppercase;
 			font-weight: 700;
 			font-size: em(30, 16);
 		}
@@ -1700,13 +1762,20 @@ main{
 	}
 	.img-content{
 		img{
-			width: 400px;
+			width: 130%;
     	max-width: unset;
 		}
 	}
 	@media (min-width: 992px){
     .img-content{
     	top: 30px;
+    }
+	}
+	@media (max-width: 992px){
+    .img-content{
+    	img{
+    		width: 100%;
+    	}
     }
 	}
 }
@@ -2013,6 +2082,106 @@ main{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+.news{
+	.short-news-content{
+
+		@include inline-boxed(75, 3);
+		figure{
+			margin-top: 30px;
+			margin-bottom: 30px;
+		}
+		*{
+			border-radius: 0;
+		}
+	}
+	
+	@media (max-width: 991px) {
+		.short-news-content{
+			@include inline-boxed(75, 2);
+		}
+	}
+
+	@media (max-width: 767px) {
+		.short-news-content{
+			@include inline-boxed(90, 1);
+		}
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 										 --- FOOTER ---
 */
@@ -2087,10 +2256,24 @@ main{
 
 
 
+[data-fancybox]{
+	display: block;
+	position: relative;
+	z-index: 1;
+	&:focus{
+		outline: 0;
+	}
+}
 
-
-
-
+.zoomContainer{
+	z-index: 1;
+}
+.zoomWindowContainer{
+	//width: 600px;
+	left: -180%;
+	top: -45%;
+	position: relative;
+}
 
 	.flickity-prev-next-button{
 		&, &:hover, &:focus{

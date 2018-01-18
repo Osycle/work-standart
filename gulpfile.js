@@ -2,17 +2,17 @@
 
 
 var gulp 					= require('gulp'),
-	del							= require('del'),
-	browserSync 		= require('browser-sync'),
-	sass 						= require('gulp-sass'),
-	concat					= require('gulp-concat'),
-	uglify					= require('gulp-uglifyjs'),
-	cssnano					= require('gulp-cssnano'),
-	rename					= require('gulp-rename'),
-	imagemin				= require('gulp-imagemin'),
-	cache						= require('gulp-cache'),
-	autoprefixer		= require('gulp-autoprefixer');
-	
+		del							= require('del'),
+		browserSync 		= require('browser-sync'),
+		sass 						= require('gulp-sass'),
+		concat					= require('gulp-concat'),
+		uglify					= require('gulp-uglifyjs'),
+		cssnano					= require('gulp-cssnano'),
+		rename					= require('gulp-rename'),
+		imagemin				= require('gulp-imagemin'),
+		cache						= require('gulp-cache'),
+		autoprefixer		= require('gulp-autoprefixer');
+		
 var app = "app";
 
 // OPTI-IMAGES
@@ -61,6 +61,8 @@ gulp.task('scripts', () =>
 			app+'/js/jquery.fancybox.js',
 			app+'/js/classie.js',
 			app+'/js/masonry.pkgd.min.js',
+			//app+'/js/highslide.min.js',
+			app+'/js/jquery.elevateZoom.min.js',
 			//app+'/js/konva.min.js',
 			//app+'/js/KonvaPlugin.js',
 			app+'/js/wow.js',

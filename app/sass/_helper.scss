@@ -123,46 +123,6 @@ html{
 }
 
 
-//------------------Parag-PADDING
-@for $i from 0 through 12 {
-	.parag-p-t-#{5*$i} { 
-		p{
-			padding-top: 5*$i+px;
-		}
-	}
-}
-@for $i from 0 through 12 {
-	.parag-p-b-#{5*$i} { 
-		p{
-			padding-bottom: 5*$i+px;
-		}
-	}
-}
-
-@for $i from 0 through 12 {
-	.parag-p-l-#{5*$i} { 
-		p{
-			padding-left: 5*$i+px;
-		}
-	}
-}
-@for $i from 0 through 12 {
-	.parag-p-r-#{5*$i} { 
-		p{
-			padding-right: 5*$i+px;
-		}
-	}
-}
-
-@for $i from 0 through 12 {
-	.parag-p-h-#{5*$i} { 
-		p{
-			padding-right: 5*$i+px;
-			padding-left: 5*$i+px;
-		}
-	}
-}
-
 
 
 
