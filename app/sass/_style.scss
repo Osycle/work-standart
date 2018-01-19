@@ -545,7 +545,11 @@ dib{
 		line-height: 170%;
 		list-style-position: outside;
 	}
-
+	&.inside{
+		li{
+			list-style-position: inside;
+		}
+	}
 }
 
 
@@ -907,6 +911,22 @@ $header-min-menu: 80px;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // MODAL
 .modal-dialog{
 		width: 400px;
@@ -933,44 +953,40 @@ $header-min-menu: 80px;
 		color: black;
 		width: 60px;
 		height: 50px;
-		right: -1px;
-    top: -1px;
+		right: -5px;
+    top: 0;
     z-index: 1;
     border-radius: 0 5px;
   	&:active{
   		outline: none;
-			box-shadow: inset 0 0 8px;
+			box-shadow: none;
 		}
 
 	}
 
 	.icon-bar{
-		background-color: white;
-		width: 30px;
+		background-color: $color-4;
+
 		display: inline-block;
     height: 2px;
    	&:nth-child(1){
-   		transform: rotate(-135deg) translate(0, 4px);
+   		transform: rotate(-135deg) translate(0, 4px) scale(0.9);
    	}
    	&:nth-child(2){
-   		transform: rotate(135deg) translate(20px, 24px);
+   		transform: rotate(135deg) translate(20px, 24px) scale(0.9);
    		
    	}
 
 	}
-	#success-message, #fail-message{
-		text-align: center;
-    margin-top: 15px;
-    margin-bottom: 35px;
-    //padding-bottom: 35px;
-	}
 }
 
 
-
+.modal-backdrop{
+	background-color: rgba( white, 0.9 );
+}
 .modal-content{
-	background: black;
-	color: white;
+	background: rgba(white, 1);
+	color: black;
 }
 .modal-body{
 	margin-top: 30px;
@@ -994,104 +1010,30 @@ $header-min-menu: 80px;
 
 
 
-.feedback-modal{
-	
-	form{
-		margin-bottom: 30px;
-		label{
-			font-size: 0.9em;
-			color: $color-1;
-		}
-		input{
-			height: 45px;
-			font-size: 1.2em;
-		}
-
-		.input{
-			width: 100%;
-			max-width: initial;
-			margin: 0;
-			margin-bottom: 5px;
-			padding-top: 3em;
-			padding-bottom: 0;
-			border-radius: 5px;
-			input{
-				&:focus{
-					&~label{
-						span{color:$color-1 !important;}
-					}
-				}
-			}
-			label:before{
-				//height: 2em;
-				border-top-color: $color-1;
-			}
-			textarea~label:before{
-				height: 4em;
-				border-top-color: $color-1;
-			}
-
-		}
-		.input--nariko{
-			//padding-top: 0.2em;
-		}
-		.input__field--nariko{
-			color: black;
-		}
-		.textarea{
-			display: block;
-			margin: 30px 0;
-			color: black;
-			textarea{
-				padding: 0.5em;
-				border-top: 5px solid $color-1;
-				border-radius:  0 0 8px 8px;
-				transition: all 0.3s ease-in-out;
-				height: 60px;
-				&:focus{
-					//height: 60px;
-				}
-			}
-			*{
-				width: 100%;
-				&:focus{
-					outline: none;
-				}
-			}
-		}//textarea
-
-
-
-	}
-
-	.modal-content{
-		color: $color-1;
-		margin-top: 15px;
-
-		@media only screen and (max-width: 991px){
-		width: 100%;
-		}
-		
-		@media only screen and (max-width: 767px){
-
-		}
-
-
-	}
-	.modal-body{
-		padding: 0 30px;
-		@extend .clearfix;
-	}
-
+#success-message, #fail-message{
+	@extend .clearfix;
+	text-align: center;
+	line-height: 30px;
+  font-weight: 600;
+  display: none;
+  margin-top: 15px;
+ 	margin-bottom: 30px;
 }
-
+#fail-message{
+	color: red;
+}
 .bid-modal{
-
+	h1, h2, h3{
+		color: $color-4;
+	}
+	button{
+		background-color: $color-4;
+	}
 	form{
 		margin-bottom: 30px;
 		label{
 			font-size: 0.9em;
-			color: $color-1;
+			color: $color-4;
 		}
 		input{
 			height: 45px;
@@ -1100,48 +1042,43 @@ $header-min-menu: 80px;
 
 		.input{
 			width: 100%;
-			max-width: initial;
-			margin: 0;
-			margin-bottom: 5px;
-			padding-top: 2.3em;
+			max-width: none;
+			margin: 35px 0 5px 0;
+			padding-top: 0.2em;
 			padding-bottom: 0;
 			//border-radius: 5px;
 			input{
 				&:focus{
 					&~label{
 						&:before{
-							border-top-color: $color-1;
+							border-top-color: $color-4;
 						}
 						span{
-							color:$color-1 !important;
+							color:$color-4 !important;
 						}
 					}
 				}
 			}
 			label:before{
 				//height: 2em;
-				border-top-color: $color-1;
+				border-top-color: $color-4;
 			}
 			textarea~label:before{
 				height: 4em;
-				border-top-color: $color-1;
+				border-top-color: $color-4;
 			}
 			
 
 		}
-		.input--nariko{
-			//padding-top: 0.2em;
-		}
-		.input__field--nariko{
-			color: black;
-		}
+
 		.textarea{
 			display: block;
 			margin: 30px 0;
 			color: black;
 			textarea{
+				resize: none;
 				padding: 0.5em;
-				border-top: 5px solid $color-1;
+				border-top: 2px solid $color-4;
 				transition: all 0.3s ease-in-out;
 				height: 60px;
 				&:focus{
@@ -1156,15 +1093,25 @@ $header-min-menu: 80px;
 			}
 		}//textarea
 		.btn-def{
+			margin-top: 30px;
+			margin-bottom: 15px;
 			border-radius: 0;
 		}
-
+		.input__field{
+			color: black;
+		}
+		.input__label--jiro{
+			&:after{
+				background: rgba($color-1, 0.5);
+			}
+		}
+		
 
 	}
 
 	.modal-content{
 		color: $color-1;
-		margin-top: 15px;
+		margin-top: 15%;
 
 		@media only screen and (max-width: 991px){
 		width: 100%;
@@ -1269,14 +1216,12 @@ h1{
 
 }
 h2{
-	font-size: em(25, 16);
+	font-size: em(26, 16);
 	margin-top: 20px;
 	margin-bottom: 10px;
 } 
 h3{
-
-	font-size: em(22, 16);
-	font-weight: 600;
+	font-size: em(20, 16);
 }
 h4{
 
@@ -1375,8 +1320,15 @@ img[align="left"]{
 	//display: none;
 
 }
-
-
+a[target="_blank"]{
+	color: $color-1;
+	text-decoration: underline;
+}
+.hover-color-4{
+	&:hover{
+		color: $color-4;
+	}
+}
 
 .index-slider{
  	overflow: hidden;
@@ -2055,9 +2007,11 @@ img[align="left"]{
 			outline: none;
 		}
 	}
-
+	.btn-content{
+		float: right;
+	}
 	button{
-		height: 60px;
+		height: 50px;
 		width: 100%;
 		background-color: transparent;
 		border: 1px solid white;
@@ -2205,7 +2159,10 @@ img[align="left"]{
 		}
 	}
 
-
+	.btn-def{
+		margin: auto;
+    float: none;
+	}
 }
 
 
@@ -2219,6 +2176,156 @@ img[align="left"]{
 
 
 
+
+
+
+
+
+
+
+
+
+
+.info-items{
+	//@include align-cells(80, 4, table);
+	margin-left: -1%;
+	margin-right: -1%;
+	&.four{
+		.info-item{
+			width: 22.7%;
+			margin: 15px 1%;
+		}
+	}
+	&.three{
+		.info-item{
+			width: 31.3%;
+			margin: 15px 1%;
+		}
+	}
+}
+.info-item{
+  display: inline-table;
+  vertical-align: middle;
+	position: relative;
+	border: 1px solid $color-4;
+	height: 100px;
+	letter-spacing: -6px;
+	*{
+		letter-spacing: 0;
+	}
+	a{
+		display: table-cell;
+		vertical-align: middle;
+		text-transform: uppercase;
+		line-height: 22px;
+		text-align: center;
+		padding: 0 20px;
+		text-decoration: none;
+	}
+
+	padding: 0 10px;
+	transition: background-color 0.3s ease-in-out;
+	&:hover{
+		color: white;
+		background-color: $color-4;
+	}
+	@media (max-width: 991px){
+		width: 90%;
+		margin: 15px 4%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.info{
+
+
+}
+
+
+.info-normativ{
+	.info-item{
+
+	}
+}
+
+
+.info-normativ-in{
+	i{
+		transition: all 0.3s ease-in-out;
+	}
+	.file-pdf{
+		&:hover{
+			color: $color-1;
+		}
+	}
+	[data-fancybox]{
+		padding: 15px ;
+		display: table-cell;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.catalog{
+	.intro-content{
+		img{
+			@media (max-width: 991px){
+				width: 90%;
+			}
+			@media (min-width: 992px){
+				width: 40%;
+			}
+
+		}
+	}
+}
+.catalog-content{
+	@include align-cells(60, 2, table);
+	 margin-left: 0;
+   margin-right: 0;
+   text-align: center;
+   figure{
+   		margin-left: 5%;
+    	margin-right: 5%;
+    	transition: filter 0.4s ease-in-out;
+    	&:hover{
+    		filter: brightness(108%);
+    	}
+   }
+   @media (max-width: 991px){
+   	figure{
+   		width: 90%;
+   		margin-left: 0;
+    	margin-right: 0;
+   	}
+   }
+}
 
 
 
@@ -2316,7 +2423,9 @@ img[align="left"]{
 */
 
 
-
+.mm-slideout{
+	z-index: unset !important;
+}
 
 [data-fancybox]{
 	display: block;
@@ -2327,32 +2436,38 @@ img[align="left"]{
 	}
 }
 
-.zoomContainer{
-	z-index: 1;
-}
+/*
 .zoomWindowContainer{
 	//width: 600px;
 	left: -180%;
 	top: -45%;
 	position: relative;
 }
+ */
+.zoomContainer{
+	z-index: 1;
+}
+.zoomWindowContainer{
+	left: 15px;
+  position: relative;
+}
 
-	.flickity-prev-next-button{
-		&, &:hover, &:focus{
-			background-color: transparent;
-			.arrow{
-				fill: $color-4;
-			}
-		}
+.flickity-prev-next-button{
+	&, &:hover, &:focus{
+		background-color: transparent;
 		.arrow{
-			fill: $color-1;
-		}
-		&.previous{
-		}
-		&.next{
-
+			fill: $color-4;
 		}
 	}
+	.arrow{
+		fill: $color-1;
+	}
+	&.previous{
+	}
+	&.next{
+
+	}
+}
 
 
 

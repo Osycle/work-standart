@@ -20,14 +20,23 @@ $(function(){
 		offset: 30
 	}).init();
 
-	//<img  data-zoom-image="img/slider/slide-1.jpg" src="img/other/production-1.jpg" align="right">
+
+
+
+	// AOS
+	AOS.init({
+	  offset: 100,
+	  once: true,
+	  duration: 1000,
+	  delay: 100
+	});
+
+	setTimeout(function(){AOS.refresh()}, 1);
 
 	// ELEVATEZOOM
 	$("[data-zoom-image]").elevateZoom({
 		scrollZoom : true,
 		easing : true
-		//zoomWindowWidth:600,
-		//zoomWindowHeight:300
 	});
 
 	// MMENU
