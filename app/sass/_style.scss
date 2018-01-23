@@ -756,6 +756,7 @@ $header-min-menu: 80px;
 				opacity: 1;
 				visibility: visible;
 				&, figure{
+					transform: none;
 					transform: unset;
 				}
 				//visibility: visible;
@@ -816,7 +817,9 @@ $header-min-menu: 80px;
 	}
 
 
+
 	.sub-figure{
+		z-index: 11212;
 		padding: 30px 15px 15px 15px;
 		width: 90%;
 		left: 0;

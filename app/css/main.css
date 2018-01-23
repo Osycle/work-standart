@@ -14033,19 +14033,7 @@ html .p-r-150 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  position: relative;
-  -webkit-flex-flow: row wrap;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap; }
+  display: flex; }
 
 [class*="pie-xs-flex"], [class*="pie-sm-flex"], [class*="pie-md-flex"], [class*="pie-lg-flex"] {
   -webkit-align-self: center;
@@ -18724,6 +18712,9 @@ dib {
       opacity: 1;
       visibility: visible; }
       .menu ul > li:hover .sub-figure, .menu ul > li:hover .sub-figure figure, .menu ul > li:hover .sub-menu-1, .menu ul > li:hover .sub-menu-1 figure {
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
         -webkit-transform: unset;
         -ms-transform: unset;
         transform: unset; }
@@ -18777,6 +18768,7 @@ dib {
       left: 70px;
       margin-top: -15px; }
   .menu .sub-figure {
+    z-index: 11212;
     padding: 30px 15px 15px 15px;
     width: 90%;
     left: 0; }

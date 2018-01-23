@@ -267,10 +267,7 @@ html{
 // PIE FLEX
 .pie-flex-content{
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	position: relative;
-	flex-flow: row wrap;
+
 }
 [class*="pie-xs-flex"], [class*="pie-sm-flex"], [class*="pie-md-flex"], [class*="pie-lg-flex"]{
 	align-self: center;
