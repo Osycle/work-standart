@@ -18628,7 +18628,7 @@ dib {
 */
 #header {
   top: 0;
-  z-index: 100;
+  z-index: 120;
   right: 0;
   left: 0;
   position: relative;
@@ -19183,6 +19183,24 @@ img[align="left"] {
     -webkit-flex: 4 4;
     -ms-flex: 4 4;
     flex: 4 4; }
+
+.pie-flex-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap; }
 
 a[target="_blank"] {
   color: #2d6eb7;

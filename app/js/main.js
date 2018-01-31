@@ -374,7 +374,7 @@ $(function(){
 				var per = ( ( 100 / imagesTotalCount ) * imagesLoadedCount ) << 0 ;
 
 				setTimeout( function(){
-					console.log(per);
+					//console.log(per);
 					$(preloadPercent).text(  per +  "%"); 
 				}, 1)
 
