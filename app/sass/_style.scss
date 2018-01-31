@@ -409,6 +409,11 @@ dib{
 .inline-block{
 	display: inline-block;
 }
+.li-inline-block{
+	li{
+		display: inline-block;
+	}
+}
 .vam{
 	vertical-align: middle;
 }
@@ -2553,39 +2558,82 @@ a[target="_blank"]{
 
 .carousel-popular{
 
-	.carousel-cell{
-		height: auto;
-		width: (85/4)+%;
-		margin: 10px 2.5%;
-		transition: box-shadow 0.5s ease-in-out;
-		border-radius: 20px;
-		//box-shadow: 0 0 0 0 black !important;
-		text-align:center;
-		.img-content{
-			width: 100%;
+		@include align-cells(90, 4, table);
+
+		figure{
+			//margin-left: 3%;
+			transform: translateX(11.5%);
+			//margin-left: 0;
+			text-align: center;
+			border: 1px solid $color-4;
+			border-radius: 20px;
+			padding: 15px 25px;
+			min-height: 360px;
+			a{
+				display: block;
+			}
+			.img-content{
+				@extend .vam-table;
+				height: 160px;
+				display: block;
+				width: 100%;
+			}
+			.img-content{
+				border-bottom: 3px solid $color-4;
+				img{
+					padding-bottom: 10px;
+				}
+			}
+
 		}
-		transform: scale(0.95);
-		&:first-child{
-			//margin-left: 10px;	
-		}
-		&:last-child{
-			//margin-right: 10px;
+		.btn-def{
+			position: absolute;
+			bottom: 15px;
+			width: 80%;
 		}
 
-		&:hover{
-			box-shadow: 0 0 30px -15px black !important;
+
+		.price{
+			font-size: 1.2em;
 		}
-		@media (max-width: 991px) {
-			width: (90/2)+%;
-		}
-		@media (max-width: 767px) {
-			width: 100%;
+		@media ( max-width:991px ){
+			@include align-cells(90, 1, table);
 		}
 
-	}
-	.flickity-viewport{
 
-	}
+
+
+ // 	.carousel-cell{
+	// 	height: auto;
+	// 	width: (85/4)+%;
+	// 	margin: 10px 2.5%;
+	// 	transition: box-shadow 0.5s ease-in-out;
+	// 	border-radius: 20px;
+	// 	//box-shadow: 0 0 0 0 black !important;
+	// 	text-align:center;
+	// 	.img-content{
+	// 		width: 100%;
+	// 	}
+	// 	transform: scale(0.95);
+	// 	&:first-child{
+	// 		//margin-left: 10px;	
+	// 	}
+	// 	&:last-child{
+	// 		//margin-right: 10px;
+	// 	}
+
+	// 	&:hover{
+	// 		box-shadow: 0 0 30px -15px black !important;
+	// 	}
+	// 	@media (max-width: 991px) {
+	// 		width: (90/2)+%;
+	// 	}
+	// 	@media (max-width: 767px) {
+	// 		width: 100%;
+	// 	}
+
+	// } 
+
 	.flickity-prev-next-button{
 		position: relative;
 		left: 50% !important;
@@ -2595,9 +2643,6 @@ a[target="_blank"]{
 		bottom: 0;
 		&.previous{
 			margin-left: -15px;
-		}
-		&.next{
-
 		}
 	}
 }
